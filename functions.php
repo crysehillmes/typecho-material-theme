@@ -13,6 +13,9 @@ function themeConfig($form) {
     $disqusShortName = new Typecho_Widget_Helper_Form_Element_Text('disqusShortName', NULL, _t(''), _t('Disqus Shortname'), _t('在这里填入 Disqus Shortname，使用内置评论系统则留空'));
     $form->addInput($disqusShortName);
 
+    $googleAnalyticsTrackingId = new Typecho_Widget_Helper_Form_Element_Text('googleAnalyticsTrackingId', NULL, _t(''), _t('Google Analytics Tracking ID'), _t('在这里填入 Google Analytics Tracking ID，不使用 Google Analytics 则留空'));
+    $form->addInput($googleAnalyticsTrackingId);
+
     $misc = new Typecho_Widget_Helper_Form_Element_Checkbox('misc', array(
         'ShowLogin' => _t('前台显示登录入口'),
         'ShowLoadTime' => _t('页脚显示加载耗时')
