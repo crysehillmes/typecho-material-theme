@@ -32,5 +32,9 @@
 	<script>
       $.material.init();
     </script>
+    <?php if($this->options->disqusShortName): ?>
+        <script id="dsq-count-scr" src="//<?php echo $this->options->disqusShortName; ?>.disqus.com/count.js" async></script>
+	<?php else: ?>
+	<?php endif; ?>
 	</body>
 </html>

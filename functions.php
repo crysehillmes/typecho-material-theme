@@ -10,6 +10,9 @@ function themeConfig($form) {
     $miibeian = new Typecho_Widget_Helper_Form_Element_Text('miibeian', NULL, _t('粤ICP备14072384号-2'), _t('备案号'), _t('在这里填入天朝备案号，不显示则留空'));
     $form->addInput($miibeian);
 
+    $disqusShortName = new Typecho_Widget_Helper_Form_Element_Text('disqusShortName', NULL, _t(''), _t('Disqus Shortname'), _t('在这里填入 Disqus Shortname，使用内置评论系统则留空'));
+    $form->addInput($disqusShortName);
+
     $misc = new Typecho_Widget_Helper_Form_Element_Checkbox('misc', array(
         'ShowLogin' => _t('前台显示登录入口'),
         'ShowLoadTime' => _t('页脚显示加载耗时')
@@ -36,3 +39,4 @@ function timer_stop( $display = 0, $precision = 3 ) {
     echo $r;
     return $r;
 }
+?>

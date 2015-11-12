@@ -35,7 +35,11 @@ $this->need('header.php');
 			        	<span>作者：<a href="<?php $this->author->permalink(); ?>"><?php $this->author(); ?></a> | </span>
 			        	<span>时间：<?php $this->date('F j, Y'); ?> | </span>
 			        	<span>分类：<?php $this->category(','); ?> | </span>
-			        	<span>评论：<a href="<?php $this->permalink() ?>"><?php $this->commentsNum('%d 评论'); ?></a> </span>
+                        <?php if($this->options->disqusShortName): ?>
+                        	<span>评论：<a href="<?php $this->permalink() ?>#disqus_thread">Link</a> | </span>
+            			<?php else: ?>
+                        	<span>评论：<a href="<?php $this->permalink() ?>"><?php $this->commentsNum('%d 评论'); ?></a> </span>
+                        <?php endif; ?>
 			        </div>
 			        <div class="post-content"><?php $this->content('Continue Reading...'); ?></div>
 			    </div>

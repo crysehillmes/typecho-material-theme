@@ -26,9 +26,16 @@
 	        <h3 class="panel-title">最新回复</h3>
 	    </a>
 	    <div class="comments_box">
-			<?php while($comments->next()): ?>
-			    <a href="<?php $comments->permalink(); ?>" class="item"><?php $comments->author(false); ?>: <?php $comments->excerpt(30, '...'); ?></a>
-			<?php endwhile; ?>
+	    	<?php if($this->options->disqusShortName): ?>
+				<div id="recentcomments" class="dsq-widget">
+					<script type="text/javascript" src="https://<?php echo $this->options->disqusShortName ?>.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=1&excerpt_length=100">
+					</script>
+				</div>
+			<?php else: ?>
+				<?php while($comments->next()): ?>
+					<a href="<?php $comments->permalink(); ?>" class="item"><?php $comments->author(false); ?>: <?php $comments->excerpt(30, '...'); ?></a>
+				<?php endwhile; ?>
+			<?php endif; ?>
 	    </div>
 	</div>
 
@@ -64,7 +71,7 @@
 	    </a>
 	    <div class="other_box">
 	       <a href="<?php $this->options->feedUrl(); ?>" class="item"><?php _e('文章 RSS'); ?></a>
-	       <a href="<?php $this->options->commentsFeedUrl(); ?>" class="item"><?php _e('评论 RSS'); ?></a>
+	       <!--a href="<?php $this->options->commentsFeedUrl(); ?>" class="item"><?php _e('评论 RSS'); ?></a-->
 	    </div>
 	</div>
 
