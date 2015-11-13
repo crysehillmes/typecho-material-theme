@@ -7,7 +7,7 @@ function themeConfig($form) {
     $siteIcon = new Typecho_Widget_Helper_Form_Element_Text('siteIcon', NULL, NULL, _t('标题栏和书签栏Icon'), _t('在这里填入一个图片URL地址, 作为标题栏和书签栏Icon, 默认不显示'));
     $form->addInput($siteIcon);
 
-    $miibeian = new Typecho_Widget_Helper_Form_Element_Text('miibeian', NULL, _t('粤ICP备14072384号-2'), _t('备案号'), _t('在这里填入天朝备案号，不显示则留空'));
+    $miibeian = new Typecho_Widget_Helper_Form_Element_Text('miibeian', NULL, _t(''), _t('备案号'), _t('在这里填入天朝备案号，不显示则留空'));
     $form->addInput($miibeian);
 
     $disqusShortName = new Typecho_Widget_Helper_Form_Element_Text('disqusShortName', NULL, _t(''), _t('Disqus Shortname'), _t('在这里填入 Disqus Shortname，使用内置评论系统则留空'));

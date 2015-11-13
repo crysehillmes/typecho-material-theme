@@ -19,7 +19,7 @@
                         <span>时间：<?php $this->date('F j, Y'); ?> | </span>
                         <span>分类：<?php $this->category(','); ?> | </span>
                         <?php if($this->options->disqusShortName): ?>
-                            <span>评论：<a href="<?php $this->permalink() ?>#disqus_thread">Link</a> | </span>
+                            <span>评论：<a href="<?php $this->permalink() ?>#disqus_thread">Link</a></span>
                         <?php else: ?>
                             <span>评论：<a href="<?php $this->permalink() ?>"><?php $this->commentsNum('%d 评论'); ?></a> </span>
                         <?php endif; ?>
