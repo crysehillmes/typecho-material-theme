@@ -11,6 +11,21 @@
 
 $this->need('header.php');
 ?>
+<?php if($this->options->$billboardImage): ?>
+	<style type="text/css">
+		.billboard {
+			background:#b8d9fa url(<?php echo $this->options->$billboardImage ?>) center center repeat-x;
+		}
+	</style>
+<?php endif; ?>
+
+<?php if($this->options->$sloganColor): ?>
+	<style type="text/css">
+		.billboard .intro {
+			color: <?php echo $this->options->$billboardImage ?>;
+		}
+	</style>
+<?php endif; ?>
 <section class="billboard">
 	<div class="container">
 		<div class="row">

@@ -1,8 +1,14 @@
 <?php
 
 function themeConfig($form) {
-    $slogan = new Typecho_Widget_Helper_Form_Element_Text('slogan', NULL, NULL, _t('首页图片标语文字'), _t('在这里文字，用于在首页中图片的文字显示'));
+    $billboardImage = new Typecho_Widget_Helper_Form_Element_Text('billboardImage', NULL, NULL, _t('首页图片'), _t('在这里填入一个图片URL地址, 作为首页 Billboard 图片，留空则显示默认图片'));
+    $form->addInput($billboardImage);
+    
+    $slogan = new Typecho_Widget_Helper_Form_Element_Text('slogan', NULL, NULL, _t('首页图片标语文字'), _t('在这里输入首页标语'));
     $form->addInput($slogan);
+    
+    $sloganColor = new Typecho_Widget_Helper_Form_Element_Text('sloganColor', NULL, NULL, _t('首页图片标语文字颜色'), _t('在这里设置首页标语颜色'));
+    $form->addInput($sloganColor);
 
     $siteIcon = new Typecho_Widget_Helper_Form_Element_Text('siteIcon', NULL, NULL, _t('标题栏和书签栏Icon'), _t('在这里填入一个图片URL地址, 作为标题栏和书签栏Icon, 默认不显示'));
     $form->addInput($siteIcon);
