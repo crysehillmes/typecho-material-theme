@@ -11,18 +11,18 @@
 
 $this->need('header.php');
 ?>
-<?php if($this->options->$billboardImage): ?>
+<?php if($this->options->billboardImage): ?>
 	<style type="text/css">
 		.billboard {
-			background:#b8d9fa url(<?php echo $this->options->$billboardImage ?>) center center repeat-x;
+			background:#b8d9fa url(<?php echo $this->options->billboardImage ?>) center center repeat-x;
 		}
 	</style>
 <?php endif; ?>
 
-<?php if($this->options->$sloganColor): ?>
+<?php if($this->options->sloganColor): ?>
 	<style type="text/css">
 		.billboard .intro {
-			color: <?php echo $this->options->$billboardImage ?>;
+			color: <?php echo $this->options->sloganColor ?>;
 		}
 	</style>
 <?php endif; ?>
